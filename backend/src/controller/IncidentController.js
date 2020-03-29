@@ -53,9 +53,7 @@ class IncidentController {
       res.status(401).json({ error: 'Not permited' });
     }
 
-    await connection('incidents')
-      .where('id', id)
-      .delete();
+    await connection('incidents').where('id', id).delete();
 
     res.status(204).send();
   }
